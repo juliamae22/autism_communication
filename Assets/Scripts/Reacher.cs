@@ -27,8 +27,19 @@ public class Reacher : MonoBehaviour {
 	private int level = 1;
 	private int stage = 1;
 
-    // Use this for initialization
-    void Start () {
+	//timers
+	private float startRewardTime;
+	private float elapsedRewardTime;
+
+	private string itemSelected;
+
+	void Awake()
+	{
+		startRewardTime = 0;
+	}
+
+
+	void Start () {
         
 		userHand = GetComponent<Rigidbody>();
 
@@ -37,9 +48,9 @@ public class Reacher : MonoBehaviour {
 		item3 = GameObject.Find("Item 3");
 		gui = GameObject.Find ("GUI");
 
-		colliderItem1 = GetComponent<Collider> ();
-		colliderItem2 = GetComponent<Collider> ();
-		colliderItem3 = GetComponent<Collider> ();
+		colliderItem1 = item1.GetComponent<Collider> ();
+		colliderItem2 = item2.GetComponent<Collider> ();
+		colliderItem3 = item3.GetComponent<Collider> ();
 
 		item1.SetActive (false);
 		item2.SetActive (false);
@@ -54,6 +65,19 @@ public class Reacher : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
+		if (startRewardTime > 0)
+		{
+			elapsedRewardTime = Time.time - startRewardTime;
+		}
+
+		if (elapsedRewardTime > 5.0f) 
+		{
+			userHand.position = new Vector3 (0,0,0);
+			startRewardTime = 0;
+			elapsedRewardTime = 0;
+			SetLevelAndStage (level, stage);
+		}
+
 		if (!levelStarted) {
 			
 			if (Input.GetKeyDown (KeyCode.Q)) { // Change this to: when gazing Car && grabs
@@ -63,6 +87,7 @@ public class Reacher : MonoBehaviour {
 				itemLocation = item1.transform.position;
 				levelStarted = true;
 				gui.SetActive (false);
+				itemSelected = "Item1";
 			}
 			if (Input.GetKeyDown (KeyCode.W)) { // Change this to: when gazing Dog && grabs
 				//remove canvas
@@ -71,6 +96,8 @@ public class Reacher : MonoBehaviour {
 				itemLocation = item2.transform.position;
 				levelStarted = true;
 				gui.SetActive (false);
+				itemSelected = "Item2";
+
 			}
 			if (Input.GetKeyDown (KeyCode.E)) { // Change this to: when gazing Ball && grabs
 				//remove canvas
@@ -79,6 +106,7 @@ public class Reacher : MonoBehaviour {
 				itemLocation = item3.transform.position;
 				levelStarted = true;
 				gui.SetActive (false);
+				itemSelected = "Item3";
 			}
 		} 
 		else {
@@ -86,10 +114,47 @@ public class Reacher : MonoBehaviour {
 			if (Input.GetKeyDown (KeyCode.P)) 
 			{
 				setNewPosition (itemLocation);
+				startRewardTime = Time.time;
+				if (stage > 3) {
+					level = level + 1;
+					stage = 1;
+				} 
+				else {
+					stage = stage + 1;
+				}
 
 			}
 		}
     }
+
+	void SetLevelAndStage (int level, int stage)
+	{
+		if (itemSelected == "Item1") {
+			if (stage == 2) {
+				item3.SetActive (true);
+			}
+			else if(stage == 3) {
+				item2.SetActive (true);
+			}
+		} 
+		else if (itemSelected == "Item2") {
+			if (stage == 2) {
+				item1.SetActive (true);
+			}
+			else if(stage == 3) {
+				item3.SetActive (true);
+			}
+		} 
+		else {
+			if (stage == 2) {
+				item1.SetActive (true);
+			}
+			else if(stage == 3) {
+				item2.SetActive (true);
+			}
+		}
+
+	}
 
 	// move hand object to start animation
 	void setNewPosition(Vector3 itemLocation)
@@ -102,4 +167,5 @@ public class Reacher : MonoBehaviour {
     {
             audioSuccess.Play();
     }
+		
 }

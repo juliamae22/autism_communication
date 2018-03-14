@@ -23,6 +23,10 @@ public class ToyAnimator : MonoBehaviour {
     void OnTriggerEnter(Collider toy)
     {
         rotate = true;
-        
     }
+
+	void OnTriggerExit(Collider toy)
+	{
+		rotate = false;
+	}
 }
