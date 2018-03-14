@@ -156,20 +156,6 @@ public class Reacher : MonoBehaviour {
 		}
     }
 
-	void FixedUpdate()
-	{
-		Vector3 fwd = transform.TransformDirection(x,0,z);
-		Debug.DrawRay(transform.position, fwd,Color.green);
-		if (Physics.Raycast(transform.position, fwd, 100))
-		{ 
-			//print("Something There"); 
-		}
-		else
-		{ 
-			//print("Nothing"); 
-		}
-	}
-
 	void SetLevelAndStage (int level, int stage)
 	{
 		if (itemSelected == "Item1") {
