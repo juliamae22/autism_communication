@@ -24,6 +24,6 @@ public class RayCaster : MonoBehaviour {
         if (Physics.Raycast(transform.position, fwd, 100))
         { print("Something There"); }
         else
-        { print("Some"); }
+        { print("Nothing"); }
     }
 }
