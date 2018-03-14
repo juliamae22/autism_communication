@@ -6,13 +6,16 @@ public class Reacher : MonoBehaviour {
 
     public float deltaPos;
     public Transform toyCar;
-    public Transform toyDog;
+    public Transform toyPen;
     public Transform toyBall;
     public AudioSource audioSuccess;
     public AudioSource audioFail;
 
     private Rigidbody userHand;
     private bool rotateTrigger = false;
+    static private bool reachCar = false;
+    private bool reachPen = false;
+    private bool reachBall = false;
 
     //bool keyPen = false;
     //bool keyDog = false;
@@ -26,22 +29,37 @@ public class Reacher : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.C)) // Change this to: when gazing Car at && grabs
+        if (Input.GetKeyDown(KeyCode.C)) // Change this to: when gazing Car && grabs
+        {
+            reachCar = true;
+            reachPen = false;
+            reachBall = false;
+        }
+        if (Input.GetKeyDown(KeyCode.D)) // Change this to: when gazing Dog && grabs
+        {
+            reachCar = false;
+            reachPen = true;
+            reachBall = false;
+        }
+        if (Input.GetKeyDown(KeyCode.V)) // Change this to: when gazing Ball && grabs
+        {
+            reachCar = false;
+            reachPen = false;
+            reachBall = true;
+        }
+
+        if (reachCar)
         {
             setNewPosition(toyCar);
         }
-        if (Input.GetKeyDown(KeyCode.D)) // Change this to: when gazing Dog at && grabs
+
+        if (reachPen)
         {
-            setNewPosition(toyDog);
+            setNewPosition(toyPen);
         }
-        if (Input.GetKeyDown(KeyCode.B)) // Change this to: when gazing Ball at && grabs
+        if (reachBall)
         {
             setNewPosition(toyBall);
-        }
-
-        if (rotateTrigger)
-        {
-            toyCar.transform.Rotate(new Vector3(15, 30, 45) * Time.deltaTime);
         }
     }
 
@@ -57,21 +75,16 @@ public class Reacher : MonoBehaviour {
         if (toy.gameObject.CompareTag("Toy"))
         {
             Debug.Log("Reached " + toy.name);
-            
-            
         }
 
         if (toy.name == "ToyDog")
         {
             audioFail.Play();
-            //toy.gameObject.SetActive(false);
         }
 
         if (toy.name == "ToyCar")
         {
             audioSuccess.Play();
-            
-            rotateTrigger = true;
         }
     }
 }

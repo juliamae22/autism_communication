@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 65164284517849892}
   - component: {fileID: 33578436600698254}
   - component: {fileID: 23638397709697062}
+  - component: {fileID: 114408161930792270}
   m_Layer: 0
   m_Name: ToyCar
   m_TagString: Toy
@@ -57,6 +58,7 @@ GameObject:
   - component: {fileID: 65190676503532470}
   - component: {fileID: 33699032071030376}
   - component: {fileID: 23817759269230722}
+  - component: {fileID: 114669112853473928}
   m_Layer: 0
   m_Name: ToyBall
   m_TagString: Toy
@@ -76,6 +78,7 @@ GameObject:
   - component: {fileID: 65538721829469946}
   - component: {fileID: 33056224912769556}
   - component: {fileID: 23167662302546534}
+  - component: {fileID: 114542046863310294}
   m_Layer: 0
   m_Name: ToyDog
   m_TagString: Toy
@@ -342,3 +345,42 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114408161930792270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1247223626810912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268029f5c533f6a479a0d2684ac2260e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotate: 0
+  delta: 100
+--- !u!114 &114542046863310294
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1609194855056728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268029f5c533f6a479a0d2684ac2260e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotate: 0
+  delta: 100
+--- !u!114 &114669112853473928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1523763767473740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268029f5c533f6a479a0d2684ac2260e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotate: 0
+  delta: 100
