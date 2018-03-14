@@ -77,11 +77,11 @@ public class Reacher : MonoBehaviour {
 			elapsedRewardTime = 0;
 			SetLevelAndStage (level, stage);
 
-			Debug.Log (stage);
-
 			//restart and begin next level
 			if (stage == 1) 
 			{
+				Debug.Log ("test2");
+
 				levelStarted = false;
 				item1.SetActive (false);
 				item2.SetActive (false);
