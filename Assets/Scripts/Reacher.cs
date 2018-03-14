@@ -27,6 +27,9 @@ public class Reacher : MonoBehaviour {
 	private int level = 1;
 	private int stage = 1;
 
+	public float x;
+	public float z;
+
 	//timers
 	private float startRewardTime;
 	private float elapsedRewardTime;
@@ -72,7 +75,7 @@ public class Reacher : MonoBehaviour {
 
 		if (elapsedRewardTime > 3.0f) 
 		{
-			userHand.position = new Vector3 (0,0,0);
+			userHand.position = new Vector3 (10,10,10);
 			startRewardTime = 0;
 			elapsedRewardTime = 0;
 			SetLevelAndStage (level, stage);
@@ -142,6 +145,20 @@ public class Reacher : MonoBehaviour {
 			}
 		}
     }
+
+	void FixedUpdate()
+	{
+		Vector3 fwd = transform.TransformDirection(x,0,z);
+		Debug.DrawRay(transform.position, fwd,Color.green);
+		if (Physics.Raycast(transform.position, fwd, 100))
+		{ 
+			print("Something There"); 
+		}
+		else
+		{ 
+			print("Nothing"); 
+		}
+	}
 
 	void SetLevelAndStage (int level, int stage)
 	{
