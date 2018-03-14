@@ -13,10 +13,11 @@ public class ToyAnimator : MonoBehaviour {
 	}
 
     // Update is called once per frame
-    void Update() {
+    void Update() 
+	{
         if (rotate)
         {
-        transform.Rotate(RotationDirection * Time.deltaTime * delta);
+        	transform.Rotate(RotationDirection * Time.deltaTime * delta);
         }
     }
 

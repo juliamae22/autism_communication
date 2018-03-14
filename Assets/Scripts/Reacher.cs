@@ -75,10 +75,20 @@ public class Reacher : MonoBehaviour {
 
 		if (elapsedRewardTime > 3.0f) 
 		{
-			userHand.position = new Vector3 (10,10,10);
+			userHand.position = new Vector3 (100,100,100);
+
+			if (stage != 1) 
+			{
+				startRewardTime = 0;
+				elapsedRewardTime = 0;
+				SetLevelAndStage (level, stage);
+			}
+		}
+
+		if (elapsedRewardTime > 5.0f) 
+		{
 			startRewardTime = 0;
 			elapsedRewardTime = 0;
-			SetLevelAndStage (level, stage);
 
 			//restart and begin next level
 			if (stage == 1) 
@@ -152,11 +162,11 @@ public class Reacher : MonoBehaviour {
 		Debug.DrawRay(transform.position, fwd,Color.green);
 		if (Physics.Raycast(transform.position, fwd, 100))
 		{ 
-			print("Something There"); 
+			//print("Something There"); 
 		}
 		else
 		{ 
-			print("Nothing"); 
+			//print("Nothing"); 
 		}
 	}
 
