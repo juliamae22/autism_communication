@@ -70,12 +70,27 @@ public class Reacher : MonoBehaviour {
 			elapsedRewardTime = Time.time - startRewardTime;
 		}
 
-		if (elapsedRewardTime > 5.0f) 
+		if (elapsedRewardTime > 3.0f) 
 		{
 			userHand.position = new Vector3 (0,0,0);
 			startRewardTime = 0;
 			elapsedRewardTime = 0;
 			SetLevelAndStage (level, stage);
+
+			Debug.Log (stage);
+
+			//restart and begin next level
+			if (stage == 1) 
+			{
+				levelStarted = false;
+				item1.SetActive (false);
+				item2.SetActive (false);
+				item3.SetActive (false);
+
+				colliderItem1.enabled = false;
+				colliderItem2.enabled = false;
+				colliderItem3.enabled = false;
+			}
 		}
 
 		if (!levelStarted) {
@@ -115,7 +130,8 @@ public class Reacher : MonoBehaviour {
 			{
 				setNewPosition (itemLocation);
 				startRewardTime = Time.time;
-				if (stage > 3) {
+				Debug.Log("stage" + stage);
+				if (stage == 3) {
 					level = level + 1;
 					stage = 1;
 				} 
