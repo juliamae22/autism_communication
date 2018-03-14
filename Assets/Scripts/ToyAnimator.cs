@@ -7,6 +7,7 @@ public class ToyAnimator : MonoBehaviour {
     private bool rotate = false;
     public float delta;
     public Vector3 RotationDirection;
+
 	// Use this for initialization
 	void Start () {
 		
