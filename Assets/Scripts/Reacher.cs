@@ -8,6 +8,7 @@ public class Reacher : MonoBehaviour {
 	private GameObject item1;
 	private GameObject item2;
 	private GameObject item3;
+	private GameObject gui;
 
 	private Collider colliderItem1;
 	private Collider colliderItem2;
@@ -34,19 +35,20 @@ public class Reacher : MonoBehaviour {
 		item1 = GameObject.Find("Item 1");
 		item2 = GameObject.Find("Item 2");
 		item3 = GameObject.Find("Item 3");
+		gui = GameObject.Find ("GUI");
 
 		colliderItem1 = GetComponent<Collider> ();
 		colliderItem2 = GetComponent<Collider> ();
 		colliderItem3 = GetComponent<Collider> ();
 
-		colliderItem1.enabled = false;
-		colliderItem2.enabled = false;
-		colliderItem3.enabled = false;
-
 		item1.SetActive (false);
 		item2.SetActive (false);
 		item3.SetActive (false);
+		gui.SetActive (true);
 
+		colliderItem1.enabled = false;
+		colliderItem2.enabled = false;
+		colliderItem3.enabled = false;
     }
 	
 	// Update is called once per frame
@@ -60,6 +62,7 @@ public class Reacher : MonoBehaviour {
 				colliderItem1.enabled = true;
 				itemLocation = item1.transform.position;
 				levelStarted = true;
+				gui.SetActive (false);
 			}
 			if (Input.GetKeyDown (KeyCode.W)) { // Change this to: when gazing Dog && grabs
 				//remove canvas
@@ -67,6 +70,7 @@ public class Reacher : MonoBehaviour {
 				colliderItem2.enabled = true;
 				itemLocation = item2.transform.position;
 				levelStarted = true;
+				gui.SetActive (false);
 			}
 			if (Input.GetKeyDown (KeyCode.E)) { // Change this to: when gazing Ball && grabs
 				//remove canvas
@@ -74,28 +78,26 @@ public class Reacher : MonoBehaviour {
 				colliderItem3.enabled = true;
 				itemLocation = item3.transform.position;
 				levelStarted = true;
+				gui.SetActive (false);
 			}
 		} 
 		else {
-
 			//be looking out for racast ()
 			if (Input.GetKeyDown (KeyCode.P)) 
 			{
 				setNewPosition (itemLocation);
+
 			}
-				
 		}
     }
 
 	// move hand object to start animation
 	void setNewPosition(Vector3 itemLocation)
     {
-		//Vector3 diffPos = new Vector3((itemLocation.position.x - userHand.position.x) * deltaPos, (itemLocation.position.y - userHand.position.y) * deltaPos, (itemLocation.position.z - userHand.position.z) * deltaPos);
 		userHand.position = itemLocation;
-		Debug.Log ("test");
     }
 
-    // Reward event. Animate toy and play sound
+	// reward event; animates toy and plays sound
     void OnTriggerEnter(Collider toy)
     {
             audioSuccess.Play();
