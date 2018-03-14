@@ -217,8 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 670a6e66639cfbf45a1e9e7a2658211d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotate: 0
   delta: 100
+  RotationDirection: {x: 0, y: 1, z: 0}
 --- !u!1001 &143374833
 Prefab:
   m_ObjectHideFlags: 0
@@ -327,8 +327,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 670a6e66639cfbf45a1e9e7a2658211d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotate: 0
   delta: 100
+  RotationDirection: {x: 0, y: 1, z: 0}
 --- !u!1 &521159727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,8 +1370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 670a6e66639cfbf45a1e9e7a2658211d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotate: 0
   delta: 100
+  RotationDirection: {x: 1, y: 0, z: 0}
 --- !u!1 &2040568606
 GameObject:
   m_ObjectHideFlags: 0
