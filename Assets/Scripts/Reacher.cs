@@ -117,7 +117,7 @@ public class Reacher : MonoBehaviour {
 				gui.SetActive (false);
 				itemSelected = "Item1";
 			}
-			if (Input.GetKeyDown (KeyCode.W)) { // Change this to: when gazing Dog && grabs
+			if (Input.GetKeyDown (KeyCode.W)) { // Change this to: when gazing Pew Pew && grabs
 				//remove canvas
 				item2.SetActive (true);
 				colliderItem2.enabled = true;
