@@ -6,6 +6,7 @@
 # Write a line equal to 'keep-all' (without quotes) to keep files regardless their modification (preserved accross builds)
 # Default behavior is to never overwrite files
 autism_verbal_communication.sln: D50F0759C231731EAE04592E577609B9
+autism_verbal_communication.sln.metaproj: 45E3535B3DCA0712BE3E14145B421393
 autism_verbal_communication\App.cs: DCD9FFC48D01B8110DE884069B229FB6
 autism_verbal_communication\autism_verbal_communication.csproj: A826CDBAA18550AD7EA6D8868DDF8470
 autism_verbal_communication\autism_verbal_communication.csproj.user: modified
@@ -17,18 +18,5 @@ autism_verbal_communication\Assets\Square44x44Logo.scale-200.png: 6C6EF27184ABE9
 autism_verbal_communication\Assets\Square44x44Logo.targetsize-24_altform-unplated.png: 156637F7B5363E983E7A46D8E533A23D
 autism_verbal_communication\Assets\StoreLogo.png: 90BD194CA4A7CFFF3E8B8222229857FB
 autism_verbal_communication\Assets\Wide310x150Logo.scale-200.png: C96846A80DF667F87355569CD816192D
-autism_verbal_communication\bin\x86\Master\ilc\Assets\SplashScreen.scale-200.png: A85C1D7624B6902CF8CEBD6F0200A826
-autism_verbal_communication\bin\x86\Master\ilc\Assets\Square150x150Logo.scale-200.png: E02834B4A5DFB97FF8E212C1CACBB084
-autism_verbal_communication\bin\x86\Master\ilc\Assets\Square44x44Logo.scale-200.png: 6C6EF27184ABE9D870A9D564953775DE
-autism_verbal_communication\bin\x86\Master\ilc\Assets\Square44x44Logo.targetsize-24_altform-unplated.png: 156637F7B5363E983E7A46D8E533A23D
-autism_verbal_communication\bin\x86\Master\ilc\Assets\StoreLogo.png: 90BD194CA4A7CFFF3E8B8222229857FB
-autism_verbal_communication\bin\x86\Master\ilc\Assets\Wide310x150Logo.scale-200.png: C96846A80DF667F87355569CD816192D
 autism_verbal_communication\obj\x86\Master\autism_verbal_communication.csproj.CopyComplete: D41D8CD98F00B204E9800998ECF8427E
-autism_verbal_communication\obj\x86\Master\ilc\in\Assets\SplashScreen.scale-200.png: A85C1D7624B6902CF8CEBD6F0200A826
-autism_verbal_communication\obj\x86\Master\ilc\in\Assets\Square150x150Logo.scale-200.png: E02834B4A5DFB97FF8E212C1CACBB084
-autism_verbal_communication\obj\x86\Master\ilc\in\Assets\Square44x44Logo.scale-200.png: 6C6EF27184ABE9D870A9D564953775DE
-autism_verbal_communication\obj\x86\Master\ilc\in\Assets\Square44x44Logo.targetsize-24_altform-unplated.png: 156637F7B5363E983E7A46D8E533A23D
-autism_verbal_communication\obj\x86\Master\ilc\in\Assets\StoreLogo.png: 90BD194CA4A7CFFF3E8B8222229857FB
-autism_verbal_communication\obj\x86\Master\ilc\in\Assets\Wide310x150Logo.scale-200.png: C96846A80DF667F87355569CD816192D
-autism_verbal_communication\obj\x86\Master\ilc\in\Properties\Default.rd.xml: 72EB282657164E79A1C42F6240984826
 autism_verbal_communication\Properties\Default.rd.xml: 72EB282657164E79A1C42F6240984826
